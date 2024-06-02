@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #845EC2;
+            padding: 10px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #45a049;
+        }
+
+        .about-section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            display: none; /* Hidden by default */
+            text-align: left;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #submitBtnContainer {
+            text-align: center; /* Center the button */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Added smooth transition for all properties */
+        }
+
+        button.circle {
+            border-radius: 50%; /* Make the button a circle */
+            width: 30px; /* Set a smaller width for the circle */
+            height: 30px; /* Set a smaller height for the circle */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .clicked {
+            width: 30px; /* Set a smaller width for the circle */
+            height: 30px; /* Set a smaller height for the circle */
+        }
+
+        .clickedAnimation {
+            animation: buttonClickAnimation 0.5s ease-in-out;
+        }
+
+        @keyframes buttonClickAnimation {
+            0% {
+                width: 30px;
+                height: 30px;
+            }
+            50% {
+                width: 100%;
+                height: 100%;
+            }
+            100% {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <a href="finalfirst.html"  class="tab">Home</a>
+        <a href="#" class="tab" onclick="showAbout()">About</a>
+        <a href="services.html" class="tab">Services</a>
+        <a href="contact.html" class="tab">Contact</a>
+    </div>
+
+    <h2>Signature Verification System</h2>
+
+    <div class="about-section" id="aboutSection">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod efficitur ligula vel aliquet.</p>
+        <p>In hac habitasse platea dictumst. Suspendisse nec libero ac justo posuere dapibus.</p>
+    </div>
+
+    <form id="signatureForm" enctype="multipart/form-data">
+        <label for="userSignature">Upload Your Signature:</label>
+        <input type="file" id="userSignature" name="userSignature" accept="image/*" required>
+        
+        <label for="compareSignatures">Upload Signatures for Comparison:</label>
+        <input type="file" id="compareSignatures" name="compareSignatures" accept="image/*" required>
+
+        <div id="submitBtnContainer">
+            <button type="button" onclick="verifySignature()">Verify Signature</button>
+        </div>
+    </form>
+
+    <!-- ... (previous HTML code) ... -->
+    <div class="custom-section">
+        <img src="">
+        <h3>Personal Information</h3>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Marital Status:</strong> Married</p>
+        <p><strong>Gender:</strong> Male</p>
+        <p><strong>Address:</strong> 123 Main Street, Cityville</p>
+    </div>
+    
+
+<!-- ... (remaining HTML code) ... -->
+
+    
+
+    <script>pip
+        function verifySignature() {
+            // You would need to implement the backend logic for signature verification here
+            // This involves sending the uploaded images to the server for processing and comparison
+            alert('Signature verification logic needs to be implemented on the server side.');
+
+            // Apply the circle class and the animation class after clicking the button
+            const submitBtn = document.querySelector('#submitBtnContainer button');
+            submitBtn.classList.add('circle', 'clickedAnimation');
+
+            // Remove the circle class and the animation class after the animation completes to revert to the original form
+            setTimeout(() => {
+                submitBtn.classList.remove('circle', 'clickedAnimation');
+            }, 500);
+        }
+
+        function showAbout() {
+            var aboutSection = document.getElementById('aboutSection');
+            aboutSection.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
